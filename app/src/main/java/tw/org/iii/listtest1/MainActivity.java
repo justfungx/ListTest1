@@ -8,6 +8,7 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import java.util.HashMap;
 import java.util.LinkedList;
@@ -43,12 +44,22 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.layout_item,
                 from,to);
         list.setAdapter(adapter);
+
+         //錯誤寫法 不是去關閉整個LIST表單
+        //        list.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Log.d("brad", "OK");
+//            }
+//        });
+
+        Toast.makeText(MainActivity.this, "OK", Toast.LENGTH_SHORT).show();
         list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
                         @Override
             public void onItemClick(AdapterView<?> adapterView,
                                     View view, int i, long l) {
-
             Log.d("DK","i="+i);
+
             }
         });
     }
