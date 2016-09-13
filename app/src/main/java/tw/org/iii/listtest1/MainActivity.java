@@ -2,7 +2,9 @@ package tw.org.iii.listtest1;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
@@ -41,7 +43,14 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.layout_item,
                 from,to);
         list.setAdapter(adapter);
-        list.setOnItemClickListener();
+        list.setOnItemClickListener(new AdapterView.OnItemClickListener(){
+                        @Override
+            public void onItemClick(AdapterView<?> adapterView,
+                                    View view, int i, long l) {
+
+            Log.d("DK","i="+i);
+            }
+        });
     }
 
     public void addItem(View v){
