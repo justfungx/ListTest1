@@ -41,6 +41,7 @@ public class MainActivity extends AppCompatActivity {
                 R.layout.layout_item,
                 from,to);
         list.setAdapter(adapter);
+        list.setOnItemClickListener();
     }
 
     public void addItem(View v){
